@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		E6A93FB11D16854A009E21DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FB01D16854A009E21DF /* main.m */; };
 		E6A93FB41D16854A009E21DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FB31D16854A009E21DF /* AppDelegate.m */; };
-		E6A93FB71D16854A009E21DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FB61D16854A009E21DF /* ViewController.m */; };
-		E6A93FBA1D16854A009E21DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A93FB81D16854A009E21DF /* Main.storyboard */; };
 		E6A93FBC1D16854A009E21DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A93FBB1D16854A009E21DF /* Assets.xcassets */; };
 		E6A93FBF1D16854A009E21DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */; };
+		E6A93FCE1D16B86B009E21DF /* RSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FCD1D16B86B009E21DF /* RSBaseViewController.m */; };
+		E6A93FD11D16B9A8009E21DF /* RSFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FD01D16B9A8009E21DF /* RSFeedListViewController.m */; };
+		E6A93FD61D16BFC2009E21DF /* RSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FD51D16BFC2009E21DF /* RSBaseView.m */; };
+		E6A93FDA1D16C83A009E21DF /* RSFeedListView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FD91D16C83A009E21DF /* RSFeedListView.m */; };
+		E6A93FDF1D16CF48009E21DF /* RSBaseTableProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FDE1D16CF48009E21DF /* RSBaseTableProvider.m */; };
+		E6A93FE41D16D354009E21DF /* RSFeedListTableProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FE31D16D354009E21DF /* RSFeedListTableProvider.m */; };
+		E6A93FE81D16DE9C009E21DF /* RSFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FE71D16DE9C009E21DF /* RSFeedCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,23 @@
 		E6A93FB01D16854A009E21DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6A93FB21D16854A009E21DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6A93FB31D16854A009E21DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6A93FB51D16854A009E21DF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E6A93FB61D16854A009E21DF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E6A93FB91D16854A009E21DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6A93FBB1D16854A009E21DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6A93FBE1D16854A009E21DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6A93FC01D16854A009E21DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A93FCC1D16B86B009E21DF /* RSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBaseViewController.h; sourceTree = "<group>"; };
+		E6A93FCD1D16B86B009E21DF /* RSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBaseViewController.m; sourceTree = "<group>"; };
+		E6A93FCF1D16B9A8009E21DF /* RSFeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedListViewController.h; sourceTree = "<group>"; };
+		E6A93FD01D16B9A8009E21DF /* RSFeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedListViewController.m; sourceTree = "<group>"; };
+		E6A93FD41D16BFC2009E21DF /* RSBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBaseView.h; sourceTree = "<group>"; };
+		E6A93FD51D16BFC2009E21DF /* RSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBaseView.m; sourceTree = "<group>"; };
+		E6A93FD81D16C83A009E21DF /* RSFeedListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedListView.h; sourceTree = "<group>"; };
+		E6A93FD91D16C83A009E21DF /* RSFeedListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedListView.m; sourceTree = "<group>"; };
+		E6A93FDD1D16CF48009E21DF /* RSBaseTableProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBaseTableProvider.h; sourceTree = "<group>"; };
+		E6A93FDE1D16CF48009E21DF /* RSBaseTableProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBaseTableProvider.m; sourceTree = "<group>"; };
+		E6A93FE21D16D354009E21DF /* RSFeedListTableProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedListTableProvider.h; sourceTree = "<group>"; };
+		E6A93FE31D16D354009E21DF /* RSFeedListTableProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedListTableProvider.m; sourceTree = "<group>"; };
+		E6A93FE61D16DE9C009E21DF /* RSFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedCell.h; sourceTree = "<group>"; };
+		E6A93FE71D16DE9C009E21DF /* RSFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +74,11 @@
 		E6A93FAE1D16854A009E21DF /* RSFeedReader */ = {
 			isa = PBXGroup;
 			children = (
-				E6A93FB21D16854A009E21DF /* AppDelegate.h */,
-				E6A93FB31D16854A009E21DF /* AppDelegate.m */,
-				E6A93FB51D16854A009E21DF /* ViewController.h */,
-				E6A93FB61D16854A009E21DF /* ViewController.m */,
-				E6A93FB81D16854A009E21DF /* Main.storyboard */,
+				E6A93FCB1D16B7C0009E21DF /* Util */,
+				E6A93FCA1D16B7B6009E21DF /* Model */,
+				E6A93FC91D16B7AE009E21DF /* Controller */,
+				E6A93FC71D16B7A1009E21DF /* View */,
+				E6A93FC61D16B781009E21DF /* Application */,
 				E6A93FBB1D16854A009E21DF /* Assets.xcassets */,
 				E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */,
 				E6A93FC01D16854A009E21DF /* Info.plist */,
@@ -77,6 +93,121 @@
 				E6A93FB01D16854A009E21DF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6A93FC61D16B781009E21DF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FB21D16854A009E21DF /* AppDelegate.h */,
+				E6A93FB31D16854A009E21DF /* AppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		E6A93FC71D16B7A1009E21DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FE51D16DE80009E21DF /* FeedCell */,
+				E6A93FDB1D16C840009E21DF /* FeedListView */,
+				E6A93FD71D16C001009E21DF /* BaseView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E6A93FC91D16B7AE009E21DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FD31D16BF69009E21DF /* BaseViewContrller */,
+				E6A93FD21D16BF57009E21DF /* FeedListController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E6A93FCA1D16B7B6009E21DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E6A93FCB1D16B7C0009E21DF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FE11D16D326009E21DF /* Common */,
+				E6A93FE01D16D317009E21DF /* Components */,
+				E6A93FDC1D16CF2F009E21DF /* Base */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		E6A93FD21D16BF57009E21DF /* FeedListController */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FCF1D16B9A8009E21DF /* RSFeedListViewController.h */,
+				E6A93FD01D16B9A8009E21DF /* RSFeedListViewController.m */,
+			);
+			name = FeedListController;
+			sourceTree = "<group>";
+		};
+		E6A93FD31D16BF69009E21DF /* BaseViewContrller */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FCC1D16B86B009E21DF /* RSBaseViewController.h */,
+				E6A93FCD1D16B86B009E21DF /* RSBaseViewController.m */,
+			);
+			name = BaseViewContrller;
+			sourceTree = "<group>";
+		};
+		E6A93FD71D16C001009E21DF /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FD41D16BFC2009E21DF /* RSBaseView.h */,
+				E6A93FD51D16BFC2009E21DF /* RSBaseView.m */,
+			);
+			name = BaseView;
+			sourceTree = "<group>";
+		};
+		E6A93FDB1D16C840009E21DF /* FeedListView */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FD81D16C83A009E21DF /* RSFeedListView.h */,
+				E6A93FD91D16C83A009E21DF /* RSFeedListView.m */,
+			);
+			name = FeedListView;
+			sourceTree = "<group>";
+		};
+		E6A93FDC1D16CF2F009E21DF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FDD1D16CF48009E21DF /* RSBaseTableProvider.h */,
+				E6A93FDE1D16CF48009E21DF /* RSBaseTableProvider.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E6A93FE01D16D317009E21DF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FE21D16D354009E21DF /* RSFeedListTableProvider.h */,
+				E6A93FE31D16D354009E21DF /* RSFeedListTableProvider.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		E6A93FE11D16D326009E21DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		E6A93FE51D16DE80009E21DF /* FeedCell */ = {
+			isa = PBXGroup;
+			children = (
+				E6A93FE61D16DE9C009E21DF /* RSFeedCell.h */,
+				E6A93FE71D16DE9C009E21DF /* RSFeedCell.m */,
+			);
+			name = FeedCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +270,6 @@
 			files = (
 				E6A93FBF1D16854A009E21DF /* LaunchScreen.storyboard in Resources */,
 				E6A93FBC1D16854A009E21DF /* Assets.xcassets in Resources */,
-				E6A93FBA1D16854A009E21DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A93FB71D16854A009E21DF /* ViewController.m in Sources */,
+				E6A93FE81D16DE9C009E21DF /* RSFeedCell.m in Sources */,
+				E6A93FD61D16BFC2009E21DF /* RSBaseView.m in Sources */,
+				E6A93FDA1D16C83A009E21DF /* RSFeedListView.m in Sources */,
 				E6A93FB41D16854A009E21DF /* AppDelegate.m in Sources */,
+				E6A93FD11D16B9A8009E21DF /* RSFeedListViewController.m in Sources */,
+				E6A93FE41D16D354009E21DF /* RSFeedListTableProvider.m in Sources */,
+				E6A93FCE1D16B86B009E21DF /* RSBaseViewController.m in Sources */,
+				E6A93FDF1D16CF48009E21DF /* RSBaseTableProvider.m in Sources */,
 				E6A93FB11D16854A009E21DF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +295,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E6A93FB81D16854A009E21DF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6A93FB91D16854A009E21DF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
