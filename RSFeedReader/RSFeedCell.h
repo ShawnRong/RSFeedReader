@@ -10,4 +10,9 @@
 
 @interface RSFeedCell : UITableViewCell
 
+@property (nonatomic, strong) NSString *titleText;
+@property (nonatomic, strong) NSString *subTitleText;
+@property (nonatomic, strong) NSString *itemCountText;
+@property (nonatomic, assign) BOOL wasReadCell;
+
 @end
