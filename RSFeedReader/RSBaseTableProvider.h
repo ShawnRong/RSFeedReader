@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol RSBaseTableProviderProtocol <NSObject>
+@protocol RSTableProviderProtocol <NSObject>
 
 - (void)cellDidPress:(NSIndexPath *) atIndexPath;
 
@@ -18,9 +18,9 @@
 
 @end
 
-@interface RSBaseTableProvider : NSObject
+@interface RSBaseTableProvider : NSObject <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) id dataSource;
-@property (nonatomic, weak) id<RSBaseTableProviderProtocol> delegate;
+@property (nonatomic, weak) id<RSTableProviderProtocol> delegate;
 
 @end

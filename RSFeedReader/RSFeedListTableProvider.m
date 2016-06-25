@@ -7,6 +7,8 @@
 //
 
 #import "RSFeedListTableProvider.h"
+#import "RSFeedCell.h"
+#import "Feed.h"
 
 NSString * const kFeedCell = @"FeedCell";
 
@@ -17,8 +19,19 @@ NSString * const kFeedCell = @"FeedCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kFeedCell];
+    RSFeedCell *cell = (RSFeedCell *)[tableView dequeueReusableCellWithIdentifier:kFeedCell];
     
+    if(cell == nil){
+        cell = [[RSFeedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kFeedCell];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    Feed *feed = (Feed *)self.dataSource[indexPath.row];
+    
+    if (feed != nil) {
+        cell.titleText = feed.title;
+        cell.subTitleText = feed.summary;
+    }
     
     
     return cell;

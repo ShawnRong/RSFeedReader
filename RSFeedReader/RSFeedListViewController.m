@@ -8,17 +8,51 @@
 
 #import "RSFeedListViewController.h"
 #import "RSFeedListView.h"
+#import "RSFeedListTableProvider.h"
+#import "RSFeedListView.h"
 
-@interface RSFeedListViewController ()
+@interface RSFeedListViewController()<RSTableProviderProtocol>
 
 @property (nonatomic, strong) RSFeedListView *feedListView;
+@property (nonatomic, strong) RSFeedListTableProvider *provider;
 
 @end
 
 @implementation RSFeedListViewController
 
 
+#pragma mark -- Initializers
+
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    RSFeedListView *feedListView = [[RSFeedListView alloc] init];
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    RSFeedListTableProvider *provider = [[RSFeedListTableProvider alloc] init];
+    provider.delegate = self;
+    
+    return self;
+}
+
+
+- (void)dealloc
+{
+    _provider.delegate = nil;
+}
+
 #pragma mark -- Life Cycle
+
+- (void)loadView{
+    RSFeedListView *aView = [[RSFeedListView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.feedListView = aView;
+    self.view = aView;
+    
+    self.feedListView.tableView.delegate = self.provider;
+    self.feedListView.tableView.dataSource = self.provider;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +65,21 @@
 #pragma mark -- Actions
 
 - (void)addPressed:(UIButton *)sender{
+    
+}
+
+- (void)trashPressed:(UIButton *)sender{
+    
+}
+
+
+#pragma mark -- RSTableProviderProtocol
+
+- (void)cellDidPress:(NSIndexPath *)atIndexPath{
+    
+}
+
+- (void)cellNeedsDelete:(NSIndexPath *)atIndexPath{
     
 }
 

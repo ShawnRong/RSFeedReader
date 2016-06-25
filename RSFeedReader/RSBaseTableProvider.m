@@ -7,10 +7,11 @@
 //
 
 #import "RSBaseTableProvider.h"
-@interface RSBaseTableProvider()<UITableViewDelegate, UITableViewDataSource>
+@interface RSBaseTableProvider()
 @end
 
 @implementation RSBaseTableProvider
+
 
 #pragma mark -- UITableViewDelegate
 

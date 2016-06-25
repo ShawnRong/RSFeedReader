@@ -30,6 +30,9 @@
     self.window.rootViewController = _navigationController;
     [self.window makeKeyAndVisible];
     
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
+    
     return YES;
 }
 
