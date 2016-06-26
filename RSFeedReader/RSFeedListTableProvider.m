@@ -14,7 +14,8 @@ NSString * const kFeedCell = @"FeedCell";
 
 @implementation RSFeedListTableProvider
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.dataSource count];
 }
 
