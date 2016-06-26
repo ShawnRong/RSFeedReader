@@ -36,7 +36,7 @@
     
     UIAlertAction *nextAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UITextField *textField = [alertController.textFields firstObject];
-        if ([textField.text length] == 0) {
+        if ([textField.text length] != 0) {
             [self addFeedPressed:textField.text];
         }else{
             [self showInvalidRSSAlert];
@@ -46,12 +46,14 @@
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
        textField.placeholder = @"http://www.something.com/rss";
-        if ([feedURL length] == 0) {
+        if ([feedURL length] != 0) {
             textField.text = feedURL;
         }
     }];
     
-    [self presentViewController:alertController animated:YES completion:nil];
+    
+    UIViewController *rootViewController = [[[[UIApplication sharedApplication]delegate] window] rootViewController];
+    [rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)showInvalidRSSAlert{

@@ -12,6 +12,20 @@
 
 @implementation RSBaseTableProvider
 
+//- (NSMutableArray *)dataSource{
+//    _dataSource = [NSMutableArray array];
+//    
+//    return _dataSource;
+//}
+
+
+- (instancetype)init:(id<RSTableProviderProtocol>)delegate{
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+    }
+    return self;
+}
 
 #pragma mark -- UITableViewDelegate
 

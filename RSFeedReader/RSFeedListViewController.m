@@ -32,15 +32,16 @@
     
     _provider = [[RSFeedListTableProvider alloc] init];
     _provider.delegate = self;
+    _provider = [[RSFeedListTableProvider alloc]init:self];
     
     return self;
 }
 
 
-- (void)dealloc
-{
-    _provider.delegate = nil;
-}
+//- (void)dealloc
+//{
+//    _provider.delegate = nil;
+//}
 
 #pragma mark -- Life Cycle
 
@@ -50,8 +51,8 @@
     self.feedListView = aView;
     self.view = aView;
     
-    self.feedListView.tableView.delegate = self.provider;
-    self.feedListView.tableView.dataSource = self.provider;
+    self.feedListView.tableView.delegate = _provider;
+    self.feedListView.tableView.dataSource = _provider;
 }
 
 
@@ -72,7 +73,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.provider.dataSource = [[RSBrain sharedBrain] coreData].allFeeds;
+    self.provider.dataSource = (NSMutableArray *)[[RSBrain sharedBrain] coreData].allFeeds;
     [self.feedListView.tableView reloadData];
 }
 

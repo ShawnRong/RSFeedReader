@@ -42,7 +42,9 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator{
     if(_persistentStoreCoordinator == nil){
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-        NSURL *url = [self.applicationDocumentDirectory URLByAppendingPathComponent:@"iFeed.sqlite"];
+        NSURL *url = [self.applicationDocumentDirectory URLByAppendingPathComponent:@"RSFeed.sqlite"];
+        
+        NSLog(@"%@",url);
         
         NSError *error = nil;
         NSString *failureReason = @"There was an error creating or loading the application's saved data.";

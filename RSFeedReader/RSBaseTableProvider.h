@@ -20,7 +20,9 @@
 
 @interface RSBaseTableProvider : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) id dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, weak) id<RSTableProviderProtocol> delegate;
+
+- (instancetype)init:(id<RSTableProviderProtocol>)delegate;
 
 @end
