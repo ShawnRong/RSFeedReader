@@ -10,6 +10,7 @@
 #import "RSFeedListView.h"
 #import "RSFeedListTableProvider.h"
 #import "RSFeedListView.h"
+#import "RSBrain.h"
 
 @interface RSFeedListViewController()<RSTableProviderProtocol>
 
@@ -25,12 +26,12 @@
 
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    RSFeedListView *feedListView = [[RSFeedListView alloc] init];
+    _feedListView = [[RSFeedListView alloc] init];
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
-    RSFeedListTableProvider *provider = [[RSFeedListTableProvider alloc] init];
-    provider.delegate = self;
+    _provider = [[RSFeedListTableProvider alloc] init];
+    _provider.delegate = self;
     
     return self;
 }
@@ -59,27 +60,74 @@
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPressed:)];
     
     [self.navigationItem setRightBarButtonItems:@[addItem] animated:YES];
+    
+    
+    if ([[RSBrain sharedBrain] coreData].allFeeds.count > 0) {
+        [self addTrashBUtton:YES];
+    }else{
+        self.feedListView.tableView.alpha = 0.0;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.provider.dataSource = [[RSBrain sharedBrain] coreData].allFeeds;
+    [self.feedListView.tableView reloadData];
 }
 
 
 #pragma mark -- Actions
 
 - (void)addPressed:(UIButton *)sender{
-    
+    [self showEnterFeedAlertView:@""];
 }
 
 - (void)trashPressed:(UIButton *)sender{
+    BOOL needsEdit = self.feedListView.tableView.editing;
     
+    [self.feedListView.tableView setEditing:needsEdit animated:YES];
+}
+
+#pragma mark -- Inherited From Base
+- (void)addFeedPressed:(NSString *)URL{
+    if ([[RSBrain sharedBrain] isDuplicateURL:URL]) {
+        [self showDuplicateRSSAlert];
+    }else{
+        [self startParsingURL:URL];
+    }
+}
+
+#pragma mark -- RSXMLParserProtocol Method
+
+- (void)didEndParsingFeed:(Feed *)feed{
+    if (feed) {
+        [self.provider.dataSource addObject:feed];
+        [[[RSBrain sharedBrain] coreData] saveContext];
+        
+        if (self.navigationItem.leftBarButtonItem == nil) {
+            [self addTrashBUtton:YES];
+            self.feedListView.tableView.alpha = 1.0;
+        }
+    }
 }
 
 
 #pragma mark -- RSTableProviderProtocol
 
 - (void)cellDidPress:(NSIndexPath *)atIndexPath{
-    
+//    if (atIndexPath.row < [[RSBrain sharedBrain] coreData].allFeeds.count) {
+//        
+//    }
 }
 
 - (void)cellNeedsDelete:(NSIndexPath *)atIndexPath{
+    
+}
+
+#pragma mark -- Helpers Method
+
+- (void)addTrashBUtton:(BOOL)add{
     
 }
 

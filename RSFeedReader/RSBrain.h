@@ -10,12 +10,18 @@
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 #import "Feed.h"
+#import "RSXMLParser.h"
+#import "RSCoreDataManager.h"
 
 @interface RSBrain : NSObject
+
+@property (nonatomic, strong) RSXMLParser *parser;
+@property (nonatomic, strong) RSCoreDataManager *coreData;
 
 - (NSManagedObject *)createEntity:(NSString *)name;
 - (Feed *)feedForIndexPath:(NSIndexPath *)indexPath;
 - (BOOL)isDuplicateURL:(NSString *)rssURL;
+
 
 + (id)sharedBrain;
 

@@ -18,5 +18,6 @@ static NSString *const kFeedItem = @"FeedItem";
 - (NSManagedObject *)createEntityWithName:(NSString *)name;
 - (NSArray *)allFeeds;
 - (void)deleteObject:(NSManagedObject *)entityObject;
+- (void)saveContext;
 
 @end

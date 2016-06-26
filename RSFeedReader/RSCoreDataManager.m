@@ -32,7 +32,7 @@
 
 - (NSManagedObjectModel *)managedObjectModel{
     if(_managedObjectModel == nil){
-        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iFeed" withExtension:@"momd"];
+        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"RSFeed" withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     }
     

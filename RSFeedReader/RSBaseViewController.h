@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSXMLParser.h"
 
-@interface RSBaseViewController : UIViewController
+@interface RSBaseViewController : UIViewController <RSXMLParserProtocol>
 
+- (void)showEnterFeedAlertView:(NSString *)feedURL;
+- (void)showInvalidRSSAlert;
+- (void)showDuplicateRSSAlert;
+
+- (void)addFeedPressed:(NSString *)URL;
+- (void)startParsingURL:(NSString *)URL;
 @end

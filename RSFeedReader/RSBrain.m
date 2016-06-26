@@ -7,13 +7,9 @@
 //
 
 #import "RSBrain.h"
-#import "RSXMLParser.h"
-#import "RSCoreDataManager.h"
+
 
 @interface RSBrain()
-
-@property (nonatomic, strong) RSXMLParser *parser;
-@property (nonatomic, strong) RSCoreDataManager *coreData;
 
 @end
 
