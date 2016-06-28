@@ -48,7 +48,7 @@
 
 - (Feed *)feedForIndexPath:(NSIndexPath *)indexPath{
     
-    NSAssert([indexPath isEqual:nil],@"Index path param is nil");
+   // NSAssert([indexPath isEqual:nil],@"Index path param is nil");
 
     Feed *feed = [[Feed alloc] init];
 

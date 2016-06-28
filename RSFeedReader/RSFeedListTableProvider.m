@@ -32,6 +32,7 @@ NSString * const kFeedCell = @"FeedCell";
     if (feed != nil) {
         cell.titleText = feed.title;
         cell.subTitleText = feed.summary;
+        cell.itemCountText = @"20";
     }
     
     

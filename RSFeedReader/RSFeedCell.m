@@ -88,7 +88,10 @@
     
     
     [self.bottomLabel sizeToFit];
-    self.bottomLabel.frame = CGRectIntegral(CGRectMake(CGRectGetMinX(self.topLabel.frame), CGRectGetMaxY(self.topLabel.frame) +1.0, self.topLabel.frame.size.width, self.bottomLabel.frame.size.width));
+    self.bottomLabel.frame = CGRectIntegral(CGRectMake(CGRectGetMinX(self.topLabel.frame),
+                                                       CGRectGetMaxY(self.topLabel.frame) + 1.0,
+                                                       self.topLabel.frame.size.width,
+                                                       self.bottomLabel.frame.size.height));
     
     [self.itemsCountLabel sizeToFit];
     self.itemsCountLabel.frame = CGRectIntegral(CGRectMake(screenW - self.itemsCountLabel.frame.size.width - 40.0, self.bounds.size.height / 2 - self.itemsCountLabel.frame.size.height / 2, self.itemsCountLabel.frame.size.width, self.itemsCountLabel.frame.size.height));

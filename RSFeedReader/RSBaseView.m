@@ -31,12 +31,13 @@
         self.bottomLabel.numberOfLines = 0;
         self.bottomLabel.text = @"NO any RSS Feed";
         self.bottomLabel.textColor = [UIColor colorWithRed:0.99 green:0.7 blue:0.23 alpha:1];
+        [self addSubview:self.bottomLabel];
         
         self.tableView = [[UITableView alloc]init];
         self.tableView.backgroundColor = [UIColor whiteColor];
         
         //Check iOS version
-        
+        [self.tableView setCellLayoutMarginsFollowReadableWidth:NO];
         
         [self addSubview:self.tableView];
     }
@@ -60,7 +61,10 @@
     self.tableView.frame  = CGRectMake(0.0, yPoint, self.bounds.size.width, self.bounds.size.height - yPoint);
     
     [self.bottomLabel sizeToFit];
-    self.bottomLabel.frame = CGRectMake(self.bounds.size.width / 2 - CGRectGetWidth(self.bottomLabel.frame) / 2, self.bounds.size.height / 2 - CGRectGetHeight(self.bottomLabel.frame) / 2, CGRectGetWidth(self.bottomLabel.frame), self.bottomLabel.frame.size.height);
+    self.bottomLabel.frame = CGRectMake(self.bounds.size.width / 2 - CGRectGetWidth(self.bottomLabel.frame) / 2,
+                                        self.bounds.size.height / 2 - CGRectGetHeight(self.bottomLabel.frame) / 2,
+                                        CGRectGetWidth(self.bottomLabel.frame),
+                                        CGRectGetHeight(self.bottomLabel.frame));
     self.bottomLabel.frame = CGRectIntegral(self.bottomLabel.frame);
 }
 

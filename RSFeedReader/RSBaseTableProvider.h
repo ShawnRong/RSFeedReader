@@ -23,6 +23,4 @@
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, weak) id<RSTableProviderProtocol> delegate;
 
-- (instancetype)init:(id<RSTableProviderProtocol>)delegate;
-
 @end

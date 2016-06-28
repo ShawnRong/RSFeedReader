@@ -32,7 +32,7 @@
     
     _provider = [[RSFeedListTableProvider alloc] init];
     _provider.delegate = self;
-    _provider = [[RSFeedListTableProvider alloc]init:self];
+//    _provider = [[RSFeedListTableProvider alloc]init:self];
     
     return self;
 }
@@ -123,7 +123,21 @@
 }
 
 - (void)cellNeedsDelete:(NSIndexPath *)atIndexPath{
-    
+    if (atIndexPath.row < [[RSBrain sharedBrain] coreData].allFeeds.count) {
+        Feed *feedToDelete = [[RSBrain sharedBrain] feedForIndexPath:atIndexPath];
+        
+        [[[RSBrain sharedBrain] coreData]deleteObject:feedToDelete];
+        [[[RSBrain sharedBrain] coreData] saveContext];
+        
+        self.provider.dataSource = (NSMutableArray *)[[RSBrain sharedBrain] coreData].allFeeds;
+        
+        [self.feedListView.tableView beginUpdates];
+        [self.feedListView.tableView deleteRowsAtIndexPaths:@[atIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.feedListView.tableView endUpdates];
+        
+        //hide trash button if there is no item
+        
+    }
 }
 
 #pragma mark -- Helpers Method
