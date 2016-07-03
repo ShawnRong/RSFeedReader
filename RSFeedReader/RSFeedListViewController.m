@@ -126,7 +126,7 @@
     if (atIndexPath.row < [[RSBrain sharedBrain] coreData].allFeeds.count) {
         Feed *feedToDelete = [[RSBrain sharedBrain] feedForIndexPath:atIndexPath];
         
-        [[[RSBrain sharedBrain] coreData]deleteObject:feedToDelete];
+        [[[RSBrain sharedBrain] coreData] deleteObject:feedToDelete];
         [[[RSBrain sharedBrain] coreData] saveContext];
         
         self.provider.dataSource = (NSMutableArray *)[[RSBrain sharedBrain] coreData].allFeeds;

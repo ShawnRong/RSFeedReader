@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Feed.h"
 
 @protocol RSTableProviderProtocol <NSObject>
 
@@ -20,7 +21,7 @@
 
 @interface RSBaseTableProvider : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray<Feed *> *dataSource;
 @property (nonatomic, weak) id<RSTableProviderProtocol> delegate;
 
 @end

@@ -27,6 +27,10 @@
 		E6A93FFA1D1E617D009E21DF /* RSXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FF91D1E617D009E21DF /* RSXMLParser.m */; };
 		E6A93FFD1D1E6222009E21DF /* RSBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FFC1D1E6222009E21DF /* RSBrain.m */; };
 		E6A940001D1E6280009E21DF /* RSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FFF1D1E6280009E21DF /* RSCoreDataManager.m */; };
+		E6D9F57D1D28ECF8009F319F /* RSFeedItemsTableProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F57C1D28ECF8009F319F /* RSFeedItemsTableProvider.m */; };
+		E6D9F5821D29379E009F319F /* RSFeedItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5811D29379E009F319F /* RSFeedItemsView.m */; };
+		E6D9F5871D2939E9009F319F /* RSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5861D2939E9009F319F /* RSBrowserViewController.m */; };
+		E6D9F58A1D293B4B009F319F /* RSFeedItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5891D293B4B009F319F /* RSFeedItemsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +73,14 @@
 		E6A93FFC1D1E6222009E21DF /* RSBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBrain.m; sourceTree = "<group>"; };
 		E6A93FFE1D1E6280009E21DF /* RSCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCoreDataManager.h; sourceTree = "<group>"; };
 		E6A93FFF1D1E6280009E21DF /* RSCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCoreDataManager.m; sourceTree = "<group>"; };
+		E6D9F57B1D28ECF8009F319F /* RSFeedItemsTableProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedItemsTableProvider.h; sourceTree = "<group>"; };
+		E6D9F57C1D28ECF8009F319F /* RSFeedItemsTableProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedItemsTableProvider.m; sourceTree = "<group>"; };
+		E6D9F5801D29379E009F319F /* RSFeedItemsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedItemsView.h; sourceTree = "<group>"; };
+		E6D9F5811D29379E009F319F /* RSFeedItemsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedItemsView.m; sourceTree = "<group>"; };
+		E6D9F5851D2939E9009F319F /* RSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBrowserViewController.h; sourceTree = "<group>"; };
+		E6D9F5861D2939E9009F319F /* RSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBrowserViewController.m; sourceTree = "<group>"; };
+		E6D9F5881D293B4B009F319F /* RSFeedItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedItemsViewController.h; sourceTree = "<group>"; };
+		E6D9F5891D293B4B009F319F /* RSFeedItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedItemsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 		E6A93FC71D16B7A1009E21DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6D9F57E1D29375D009F319F /* FeedItemsView */,
 				E6A93FE51D16DE80009E21DF /* FeedCell */,
 				E6A93FDB1D16C840009E21DF /* FeedListView */,
 				E6A93FD71D16C001009E21DF /* BaseView */,
@@ -164,6 +177,8 @@
 		E6A93FC91D16B7AE009E21DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E6D9F5841D29394A009F319F /* Browser */,
+				E6D9F57F1D293769009F319F /* FeedItemsViewController */,
 				E6A93FD31D16BF69009E21DF /* BaseViewContrller */,
 				E6A93FD21D16BF57009E21DF /* FeedListController */,
 			);
@@ -246,6 +261,8 @@
 			children = (
 				E6A93FE21D16D354009E21DF /* RSFeedListTableProvider.h */,
 				E6A93FE31D16D354009E21DF /* RSFeedListTableProvider.m */,
+				E6D9F57B1D28ECF8009F319F /* RSFeedItemsTableProvider.h */,
+				E6D9F57C1D28ECF8009F319F /* RSFeedItemsTableProvider.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -270,6 +287,33 @@
 				E6A93FE71D16DE9C009E21DF /* RSFeedCell.m */,
 			);
 			name = FeedCell;
+			sourceTree = "<group>";
+		};
+		E6D9F57E1D29375D009F319F /* FeedItemsView */ = {
+			isa = PBXGroup;
+			children = (
+				E6D9F5801D29379E009F319F /* RSFeedItemsView.h */,
+				E6D9F5811D29379E009F319F /* RSFeedItemsView.m */,
+			);
+			name = FeedItemsView;
+			sourceTree = "<group>";
+		};
+		E6D9F57F1D293769009F319F /* FeedItemsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6D9F5881D293B4B009F319F /* RSFeedItemsViewController.h */,
+				E6D9F5891D293B4B009F319F /* RSFeedItemsViewController.m */,
+			);
+			name = FeedItemsViewController;
+			sourceTree = "<group>";
+		};
+		E6D9F5841D29394A009F319F /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				E6D9F5851D2939E9009F319F /* RSBrowserViewController.h */,
+				E6D9F5861D2939E9009F319F /* RSBrowserViewController.m */,
+			);
+			name = Browser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D9F58A1D293B4B009F319F /* RSFeedItemsViewController.m in Sources */,
 				E6A93FE81D16DE9C009E21DF /* RSFeedCell.m in Sources */,
 				E6A940001D1E6280009E21DF /* RSCoreDataManager.m in Sources */,
 				E6A93FD61D16BFC2009E21DF /* RSBaseView.m in Sources */,
@@ -401,15 +446,18 @@
 				E6A93FF71D1E49B2009E21DF /* FeedItem.m in Sources */,
 				E6A93FFD1D1E6222009E21DF /* RSBrain.m in Sources */,
 				E6A93FF61D1E49B2009E21DF /* FeedItem+CoreDataProperties.m in Sources */,
+				E6D9F5871D2939E9009F319F /* RSBrowserViewController.m in Sources */,
 				E6A93FEB1D1E48F4009E21DF /* RSFeed.xcdatamodeld in Sources */,
 				E6A93FF41D1E49B2009E21DF /* Feed+CoreDataProperties.m in Sources */,
 				E6A93FD11D16B9A8009E21DF /* RSFeedListViewController.m in Sources */,
 				E6A93FE41D16D354009E21DF /* RSFeedListTableProvider.m in Sources */,
 				E6A93FCE1D16B86B009E21DF /* RSBaseViewController.m in Sources */,
+				E6D9F5821D29379E009F319F /* RSFeedItemsView.m in Sources */,
 				E6A93FF51D1E49B2009E21DF /* Feed.m in Sources */,
 				E6A93FFA1D1E617D009E21DF /* RSXMLParser.m in Sources */,
 				E6A93FDF1D16CF48009E21DF /* RSBaseTableProvider.m in Sources */,
 				E6A93FB11D16854A009E21DF /* main.m in Sources */,
+				E6D9F57D1D28ECF8009F319F /* RSFeedItemsTableProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

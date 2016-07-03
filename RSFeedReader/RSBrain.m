@@ -48,16 +48,17 @@
 
 - (Feed *)feedForIndexPath:(NSIndexPath *)indexPath{
     
-   // NSAssert([indexPath isEqual:nil],@"Index path param is nil");
+    NSAssert(![indexPath isEqual:nil],@"Index path param is nil");
 
     Feed *feed = [[Feed alloc] init];
 
     NSInteger feedsCount = [self.coreData allFeeds].count;
+    NSInteger row = indexPath.row;
     if (feedsCount > 0 && indexPath.row < feedsCount) {
-        feed = [self.coreData allFeeds][indexPath.row];
+        feed = [self.coreData allFeeds][row];
     }
     
-    NSAssert(feed != nil, @"Feed for index path is nil");
+//    NSAssert(feed != nil, @"Feed for index path is nil");
     
     return feed;
 }

@@ -17,4 +17,6 @@
 
 - (void)addFeedPressed:(NSString *)URL;
 - (void)startParsingURL:(NSString *)URL;
+
+- (void)showAlertMessage:(NSString *)message;
 @end
