@@ -36,4 +36,20 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    if (![url.resourceSpecifier isEqual:nil]) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        
+        UIViewController *topViewController = self.navigationController.topViewController;
+        
+        RSFeedListViewController *vc = (RSFeedListViewController *)topViewController;
+        if (vc) {
+            [vc showEnterFeedAlertView:url.absoluteString];
+        }
+    }
+    
+    return YES;
+}
+
 @end

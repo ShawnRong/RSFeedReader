@@ -55,7 +55,7 @@
     NSInteger feedsCount = [self.coreData allFeeds].count;
     NSInteger row = indexPath.row;
     if (feedsCount > 0 && indexPath.row < feedsCount) {
-        feed = [self.coreData allFeeds][row];
+        feed = [[self.coreData allFeeds] objectAtIndex:row];
     }
     
 //    NSAssert(feed != nil, @"Feed for index path is nil");

@@ -7,6 +7,7 @@
 //
 
 #import "RSCoreDataManager.h"
+#import "Feed.h"
 
 @interface RSCoreDataManager()
 
@@ -109,7 +110,7 @@
     
     NSError *error;
     
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray <Feed *> *result = [self.managedObjectContext executeFetchRequest:request error:&error];
     if(error){
         
         NSLog(@"Unresolved error %@,%@",error,error.userInfo);

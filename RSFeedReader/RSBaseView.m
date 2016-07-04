@@ -45,11 +45,6 @@
     return self;
 }
 
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-//    self = [super initWithCoder:aDecoder];
-// 
-//    return self;
-//}
 
 #pragma mark -- UIView override
 

@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) RSFeedListView *feedListView;
 @property (nonatomic, strong) RSFeedListTableProvider *provider;
+@property (nonatomic, strong) NSArray *allFeeds;
 
 @end
 
@@ -32,7 +33,8 @@
     
     _provider = [[RSFeedListTableProvider alloc] init];
     _provider.delegate = self;
-//    _provider = [[RSFeedListTableProvider alloc]init:self];
+
+    _allFeeds = [[RSBrain sharedBrain] coreData].allFeeds;
     
     return self;
 }
@@ -63,7 +65,7 @@
     [self.navigationItem setRightBarButtonItems:@[addItem] animated:YES];
     
     
-    if ([[RSBrain sharedBrain] coreData].allFeeds.count > 0) {
+    if (self.allFeeds.count > 0) {
         [self addTrashBUtton:YES];
     }else{
         self.feedListView.tableView.alpha = 0.0;
@@ -73,7 +75,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.provider.dataSource = (NSMutableArray *)[[RSBrain sharedBrain] coreData].allFeeds;
+    
+    //Convert NSArray to NSmutableArray
+    self.provider.dataSource = [NSMutableArray arrayWithArray:self.allFeeds];
     [self.feedListView.tableView reloadData];
 }
 
@@ -124,15 +128,21 @@
 
 - (void)cellNeedsDelete:(NSIndexPath *)atIndexPath{
     if (atIndexPath.row < [[RSBrain sharedBrain] coreData].allFeeds.count) {
-        Feed *feedToDelete = [[RSBrain sharedBrain] feedForIndexPath:atIndexPath];
+//        Feed *feedToDelete = [[RSBrain sharedBrain] feedForIndexPath:atIndexPath];
+        Feed *feedToDelete = [self.allFeeds objectAtIndex:atIndexPath.row];
+        
         
         [[[RSBrain sharedBrain] coreData] deleteObject:feedToDelete];
         [[[RSBrain sharedBrain] coreData] saveContext];
         
-        self.provider.dataSource = (NSMutableArray *)[[RSBrain sharedBrain] coreData].allFeeds;
-        
+        NSMutableArray *array = [self.allFeeds mutableCopy];
+        [array removeObject:feedToDelete];
+        self.allFeeds = array;
+        //Convert NSArray to NSmutableArray
+        self.provider.dataSource = [NSMutableArray arrayWithArray:self.allFeeds];
+
         [self.feedListView.tableView beginUpdates];
-        [self.feedListView.tableView deleteRowsAtIndexPaths:@[atIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.feedListView.tableView deleteRowsAtIndexPaths:@[ atIndexPath ] withRowAnimation:UITableViewRowAnimationFade];
         [self.feedListView.tableView endUpdates];
         
         //hide trash button if there is no item
