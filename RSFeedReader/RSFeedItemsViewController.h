@@ -10,4 +10,7 @@
 
 @interface RSFeedItemsViewController : RSBaseViewController
 
+@property (nonatomic, strong)Feed *feed;
+
+
 @end

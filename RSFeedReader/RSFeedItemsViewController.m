@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong)RSFeedItemsView *feedItemsView;
 @property (nonatomic, strong)RSFeedItemsTableProvider *provider;
-@property (nonatomic, strong)Feed *feed;
+@property (nonatomic, strong)NSMutableArray <FeedItem *>*allItems;
 
 @end
 
@@ -31,6 +31,8 @@
         _feedItemsView = [[RSFeedItemsView alloc] init];
         _provider = [[RSFeedItemsTableProvider alloc] init];
         _provider.delegate = self;
+        
+        _allItems = [[[self.feed feedItems]allObjects] mutableCopy];
     }
     return self;
 }
@@ -47,7 +49,7 @@
     [super loadView];
     
     //populate table view
-    if (self.feed != nil && [self.feed.feedItems allObjects].count > 0) {
+    if (self.feed != nil && self.allItems.count > 0) {
         NSArray *items = [self.feed sortedItem];
         
         self.provider.dataSource = [items mutableCopy];
@@ -95,19 +97,26 @@
 
 - (void)didEndParsingFeed:(Feed *)feed{
     if (![feed isEqual:nil] && self.feed != nil) {
-//        NSArray *existFeedItems = [self.feed.feedItems allObjects];
         
-        //array from of all feed items 'publish date'
-
+        NSMutableArray *refreshDatesArr = [NSMutableArray array];
+        
+        for (FeedItem *refreshItem in self.allItems) {
+            [refreshDatesArr addObject:refreshItem.publishDate];
+        }
+        
         //incoming feed
         Feed *incomingFeed = [[Feed alloc] init];
         NSMutableArray *incomingItems = [[incomingFeed.feedItems allObjects] mutableCopy];
         
         [[[RSBrain sharedBrain] coreData] deleteObject:feed];
         
-//        for (FeedItem *item in incomingItems) {
-//
-//        }
+        for (FeedItem *item in incomingItems) {
+            if ([refreshDatesArr containsObject:item.publishDate]) {
+                item.feed = self.feed;
+            }else{
+                [[[RSBrain sharedBrain] coreData] deleteObject:item];
+            }
+        }
         
         [[[RSBrain sharedBrain] coreData] saveContext];
         

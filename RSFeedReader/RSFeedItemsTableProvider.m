@@ -16,7 +16,7 @@ NSString * const kItemsCell = @"ItemsCell";
 @implementation RSFeedItemsTableProvider
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataSource.count;
+    return [self.dataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

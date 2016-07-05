@@ -11,6 +11,7 @@
 #import "RSFeedListTableProvider.h"
 #import "RSFeedListView.h"
 #import "RSBrain.h"
+#import "RSFeedItemsViewController.h"
 
 @interface RSFeedListViewController()<RSTableProviderProtocol>
 
@@ -89,7 +90,7 @@
 }
 
 - (void)trashPressed:(UIButton *)sender{
-    BOOL needsEdit = self.feedListView.tableView.editing;
+    BOOL needsEdit = !self.feedListView.tableView.editing;
     
     [self.feedListView.tableView setEditing:needsEdit animated:YES];
 }
@@ -130,9 +131,15 @@
 #pragma mark -- RSTableProviderProtocol
 
 - (void)cellDidPress:(NSIndexPath *)atIndexPath{
-//    if (atIndexPath.row < [[RSBrain sharedBrain] coreData].allFeeds.count) {
-//        
-//    }
+    if (atIndexPath.row < self.allFeeds.count) {
+        RSFeedItemsViewController *itemsVC = [[RSFeedItemsViewController alloc] init];
+
+        itemsVC.feed = self.allFeeds[atIndexPath.row];
+        
+       
+        [self.navigationController pushViewController:itemsVC animated:YES];
+        
+    }
 }
 
 - (void)cellNeedsDelete:(NSIndexPath *)atIndexPath{
@@ -155,14 +162,25 @@
         [self.feedListView.tableView endUpdates];
         
         //hide trash button if there is no item
-        
+        if(self.provider.dataSource.count == 0){
+            [self addTrashBUtton:NO];
+            
+            [self.feedListView.tableView setEditing:false animated:false];
+            self.feedListView.tableView.alpha = 0.0;
+        }
     }
 }
 
 #pragma mark -- Helpers Method
 
 - (void)addTrashBUtton:(BOOL)add{
-    
+    if (add) {
+        UIBarButtonItem *trashButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(trashPressed:)];
+        
+        [self.navigationItem setLeftBarButtonItems:@[trashButton] animated:YES];
+    }else{
+        [self.navigationItem setLeftBarButtonItems:nil animated:YES];
+    }
 }
 
 @end
