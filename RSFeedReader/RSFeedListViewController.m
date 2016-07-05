@@ -110,6 +110,15 @@
         [self.provider.dataSource addObject:feed];
         [[[RSBrain sharedBrain] coreData] saveContext];
         
+        NSMutableArray *array = [self.allFeeds mutableCopy];
+        [array addObject:feed];
+        self.allFeeds = array;
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.allFeeds indexOfObject:feed] inSection:0];
+        [self.feedListView.tableView beginUpdates];
+        [self.feedListView.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.feedListView.tableView endUpdates];
+        
         if (self.navigationItem.leftBarButtonItem == nil) {
             [self addTrashBUtton:YES];
             self.feedListView.tableView.alpha = 1.0;
@@ -142,7 +151,7 @@
         self.provider.dataSource = [NSMutableArray arrayWithArray:self.allFeeds];
 
         [self.feedListView.tableView beginUpdates];
-        [self.feedListView.tableView deleteRowsAtIndexPaths:@[ atIndexPath ] withRowAnimation:UITableViewRowAnimationFade];
+        [self.feedListView.tableView deleteRowsAtIndexPaths:@[ atIndexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
         [self.feedListView.tableView endUpdates];
         
         //hide trash button if there is no item

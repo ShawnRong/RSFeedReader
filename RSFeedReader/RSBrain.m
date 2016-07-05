@@ -69,7 +69,7 @@
     NSArray *allItems = [[RSBrain sharedBrain] coreData].allFeeds;
     
     for (Feed *item in allItems) {
-        if (rssURL == item.rssURL) {
+        if ([rssURL isEqualToString:[item rssURL]]) {
             returnValue = YES;
         }
     }
