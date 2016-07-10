@@ -57,6 +57,7 @@
     self.feedItemsView.feedListDelegate = self;
     
     _allItems = [[[self.feed feedItems] allObjects] mutableCopy];
+    NSLog(@"%@",_allItems);
 }
 
 - (void)viewDidLoad {

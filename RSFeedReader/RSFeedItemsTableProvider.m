@@ -27,12 +27,12 @@ NSString * const kItemsCell = @"ItemsCell";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    FeedItem *item = [[FeedItem alloc] init];
+//    FeedItem *item = [[FeedItem alloc] init];
     
-    if (self.dataSource.count > 0 && indexPath.row < self.dataSource.count) {
-        item = (FeedItem *)self.dataSource[indexPath.row];
-    }
-    
+//    if (self.dataSource.count > 0 && indexPath.row < self.dataSource.count) {
+//    }
+    FeedItem *item = (FeedItem *)self.dataSource[indexPath.row];
+
     if (item != nil) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd-MM-yyyy hh:mm";

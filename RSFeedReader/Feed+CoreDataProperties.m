@@ -2,7 +2,7 @@
 //  Feed+CoreDataProperties.m
 //  RSFeedReader
 //
-//  Created by 戎晟 on 16/6/25.
+//  Created by 戎晟 on 16/7/10.
 //  Copyright © 2016年 Shawn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
