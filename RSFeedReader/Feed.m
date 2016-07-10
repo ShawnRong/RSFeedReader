@@ -13,7 +13,7 @@
 // Insert code here to add functionality to your managed object subclass
 
 - (NSArray *)sortedItem{
-    NSArray *unsortedItem = [self.feedItems allObjects];
+    NSArray *unsortedItem = [[self.feedItems allObjects] mutableCopy];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"publishDate" ascending:YES];
     NSArray *sortedArray = [unsortedItem sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
@@ -21,7 +21,7 @@
 }
 
 - (NSArray *)unreadItem{
-    NSArray *unsortedItem = [self.feedItems allObjects];
+    NSArray *unsortedItem = [[self.feedItems allObjects] mutableCopy];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"wasRead == false"];
     unsortedItem = [unsortedItem filteredArrayUsingPredicate:predicate];

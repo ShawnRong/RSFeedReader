@@ -32,7 +32,6 @@
         _provider = [[RSFeedItemsTableProvider alloc] init];
         _provider.delegate = self;
         
-        _allItems = [[[self.feed feedItems]allObjects] mutableCopy];
     }
     return self;
 }
@@ -48,6 +47,21 @@
 - (void)loadView{
     [super loadView];
     
+    RSFeedItemsView *aView = [[RSFeedItemsView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.feedItemsView = aView;
+    self.view = aView;
+    
+    self.feedItemsView.tableView.delegate = self.provider;
+    self.feedItemsView.tableView.dataSource = self.provider;
+    self.feedItemsView.feedListDelegate = self;
+    
+    _allItems = [[[self.feed feedItems] allObjects] mutableCopy];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     //populate table view
     if (self.feed != nil && self.allItems.count > 0) {
         NSArray *items = [self.feed sortedItem];
@@ -55,16 +69,17 @@
         self.provider.dataSource = [items mutableCopy];
         [self.feedItemsView.tableView reloadData];
     }
+    
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     [self.feedItemsView.tableView reloadData];
     
     self.title = self.feed.title;
+    
 }
-
 #pragma mark -- RSTableProviderProtocol
 
 - (void)cellDidPress:(NSIndexPath *)atIndexPath{
