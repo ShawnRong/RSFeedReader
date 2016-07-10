@@ -14,7 +14,7 @@
 
 - (NSArray *)sortedItem{
     NSArray *unsortedItem = [[self.feedItems allObjects] mutableCopy];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"publishDate" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"publishDate" ascending:NO];
     NSArray *sortedArray = [unsortedItem sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     return sortedArray;
@@ -23,7 +23,7 @@
 - (NSArray *)unreadItem{
     NSArray *unsortedItem = [[self.feedItems allObjects] mutableCopy];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"wasRead == false"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"wasRead != %@",[NSNumber numberWithBool:YES]];
     unsortedItem = [unsortedItem filteredArrayUsingPredicate:predicate];
     
     return unsortedItem;

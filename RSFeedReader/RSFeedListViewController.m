@@ -41,10 +41,10 @@
 }
 
 
-//- (void)dealloc
-//{
-//    _provider.delegate = nil;
-//}
+- (void)dealloc
+{
+    _provider.delegate = nil;
+}
 
 #pragma mark -- Life Cycle
 

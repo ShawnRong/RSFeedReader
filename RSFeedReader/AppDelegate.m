@@ -30,8 +30,13 @@
     self.window.rootViewController = _navigationController;
     [self.window makeKeyAndVisible];
     
-    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+//   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
+    //configure cache to minimize its capacity
+    NSURLCache *appCache = [[NSURLCache alloc] initWithMemoryCapacity:0 diskCapacity:0 diskPath:@"nsurlcache"];
+    [NSURLCache setSharedURLCache:appCache];
     
     return YES;
 }

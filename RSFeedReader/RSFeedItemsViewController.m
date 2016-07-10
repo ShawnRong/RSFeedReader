@@ -57,7 +57,6 @@
     self.feedItemsView.feedListDelegate = self;
     
     _allItems = [[[self.feed feedItems] allObjects] mutableCopy];
-    NSLog(@"%@",_allItems);
 }
 
 - (void)viewDidLoad {
@@ -121,13 +120,13 @@
         }
         
         //incoming feed
-        Feed *incomingFeed = [[Feed alloc] init];
+        Feed *incomingFeed = feed;
         NSMutableArray *incomingItems = [[incomingFeed.feedItems allObjects] mutableCopy];
         
         [[[RSBrain sharedBrain] coreData] deleteObject:feed];
         
         for (FeedItem *item in incomingItems) {
-            if ([refreshDatesArr containsObject:item.publishDate]) {
+            if (![refreshDatesArr containsObject:item.publishDate]) {
                 item.feed = self.feed;
             }else{
                 [[[RSBrain sharedBrain] coreData] deleteObject:item];
@@ -143,4 +142,6 @@
     self.provider.dataSource = [[self.feed sortedItem] mutableCopy];
     [self.feedItemsView.tableView reloadData];
 }
+
+
 @end

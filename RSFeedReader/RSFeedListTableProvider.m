@@ -32,7 +32,8 @@ NSString * const kFeedCell = @"FeedCell";
     if (feed != nil) {
         cell.titleText = feed.title;
         cell.subTitleText = feed.summary;
-        cell.itemCountText = @"20";
+        NSInteger unreadCount = [feed unreadItem].count;
+        cell.itemCountText = [NSString stringWithFormat:@"%ld",unreadCount];
     }
     
     
