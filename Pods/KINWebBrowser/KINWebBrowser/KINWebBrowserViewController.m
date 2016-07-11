@@ -91,23 +91,25 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
 - (id)initWithConfiguration:(WKWebViewConfiguration *)configuration {
     self = [super init];
     if(self) {
-        if([WKWebView class]) {
-            if(configuration) {
-                self.wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
-            }
-            else {
-                self.wkWebView = [[WKWebView alloc] init];
-            }
-        }
-        else {
-            self.uiWebView = [[UIWebView alloc] init];
-        }
+//        if([WKWebView class]) {
+//            if(configuration) {
+//                self.wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
+//            }
+//            else {
+//                self.wkWebView = [[WKWebView alloc] init];
+//            }
+//        }
+//        else {
+//            self.uiWebView = [[UIWebView alloc] init];
+//        }
         
+        self.uiWebView = [[UIWebView alloc] init];
+
         self.actionButtonHidden = NO;
         self.showsURLInNavigationBar = NO;
         self.showsPageTitleInNavigationBar = YES;
         
-        self.externalAppPermissionAlertView = [[UIAlertView alloc] initWithTitle:@"Leave this app?" message:@"This web page is trying to open an outside app. Are you sure you want to open it?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Open App", nil];
+//        self.externalAppPermissionAlertView = [[UIAlertView alloc] initWithTitle:@"Leave this app?" message:@"This web page is trying to open an outside app. Are you sure you want to open it?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Open App", nil];
         
     }
     return self;
@@ -147,8 +149,8 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
     
     self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     [self.progressView setTrackTintColor:[UIColor colorWithWhite:1.0f alpha:0.0f]];
-    [self.progressView setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-self.progressView.frame.size.height, self.view.frame.size.width, self.progressView.frame.size.height)];
-    [self.progressView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+//    [self.progressView setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-self.progressView.frame.size.height, self.view.frame.size.width, self.progressView.frame.size.height)];
+//    [self.progressView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -157,7 +159,7 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController setToolbarHidden:NO animated:YES];
     
-    [self.navigationController.navigationBar addSubview:self.progressView];
+//    [self.navigationController.navigationBar addSubview:self.progressView];
     
     [self updateToolbarState];
 }
@@ -205,14 +207,14 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
 - (void)setTintColor:(UIColor *)tintColor {
     _tintColor = tintColor;
     [self.progressView setTintColor:tintColor];
-    [self.navigationController.navigationBar setTintColor:tintColor];
+//    [self.navigationController.navigationBar setTintColor:tintColor];
     [self.navigationController.toolbar setTintColor:tintColor];
 }
 
 - (void)setBarTintColor:(UIColor *)barTintColor {
     _barTintColor = barTintColor;
-    [self.navigationController.navigationBar setBarTintColor:barTintColor];
-    [self.navigationController.toolbar setBarTintColor:barTintColor];
+//    [self.navigationController.navigationBar setBarTintColor:barTintColor];
+//    [self.navigationController.toolbar setBarTintColor:barTintColor];
 }
 
 - (void)setActionButtonHidden:(BOOL)actionButtonHidden {
@@ -226,7 +228,7 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if(webView == self.uiWebView) {
         
-        if(![self externalAppRequiredToOpenURL:request.URL]) {
+//        if(![self externalAppRequiredToOpenURL:request.URL]) {
             self.uiWebViewCurrentURL = request.URL;
             self.uiWebViewIsLoading = YES;
             [self updateToolbarState];
@@ -237,11 +239,11 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
                 [self.delegate webBrowser:self didStartLoadingURL:request.URL];
             }
             return YES;
-        }
-        else {
-            [self launchExternalAppWithURL:request.URL];
-            return NO;
-        }
+//        }
+//        else {
+//            [self launchExternalAppWithURL:request.URL];
+//            return NO;
+//        }
     }
     return NO;
 }
@@ -319,18 +321,18 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
     if(webView == self.wkWebView) {
         
         NSURL *URL = navigationAction.request.URL;
-        if(![self externalAppRequiredToOpenURL:URL]) {
+//        if(![self externalAppRequiredToOpenURL:URL]) {
             if(!navigationAction.targetFrame) {
                 [self loadURL:URL];
                 decisionHandler(WKNavigationActionPolicyCancel);
                 return;
             }
-        }
-        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
-            [self launchExternalAppWithURL:URL];
-            decisionHandler(WKNavigationActionPolicyCancel);
-            return;
-        }
+//        }
+//        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
+//            [self launchExternalAppWithURL:URL];
+//            decisionHandler(WKNavigationActionPolicyCancel);
+//            return;
+//        }
     }
     decisionHandler(WKNavigationActionPolicyAllow);
 }
@@ -483,12 +485,12 @@ static void *KINWebBrowserContext = &KINWebBrowserContext;
     }
     if (URLForActivityItem) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
-            ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
+//            TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
+//            ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
             
             NSMutableArray *activities = [[NSMutableArray alloc] init];
-            [activities addObject:safariActivity];
-            [activities addObject:chromeActivity];
+//            [activities addObject:safariActivity];
+//            [activities addObject:chromeActivity];
             if(self.customActivityItems != nil) {
                 [activities addObjectsFromArray:self.customActivityItems];
             }
