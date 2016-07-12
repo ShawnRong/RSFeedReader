@@ -11,7 +11,6 @@
 		E6A93FB11D16854A009E21DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FB01D16854A009E21DF /* main.m */; };
 		E6A93FB41D16854A009E21DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FB31D16854A009E21DF /* AppDelegate.m */; };
 		E6A93FBC1D16854A009E21DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A93FBB1D16854A009E21DF /* Assets.xcassets */; };
-		E6A93FBF1D16854A009E21DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */; };
 		E6A93FCE1D16B86B009E21DF /* RSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FCD1D16B86B009E21DF /* RSBaseViewController.m */; };
 		E6A93FD11D16B9A8009E21DF /* RSFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FD01D16B9A8009E21DF /* RSFeedListViewController.m */; };
 		E6A93FD61D16BFC2009E21DF /* RSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A93FD51D16BFC2009E21DF /* RSBaseView.m */; };
@@ -31,6 +30,7 @@
 		E6D9F5821D29379E009F319F /* RSFeedItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5811D29379E009F319F /* RSFeedItemsView.m */; };
 		E6D9F5871D2939E9009F319F /* RSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5861D2939E9009F319F /* RSBrowserViewController.m */; };
 		E6D9F58A1D293B4B009F319F /* RSFeedItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D9F5891D293B4B009F319F /* RSFeedItemsViewController.m */; };
+		E6D9F58C1D352820009F319F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D9F58B1D352820009F319F /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,6 @@
 		E6A93FB21D16854A009E21DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6A93FB31D16854A009E21DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E6A93FBB1D16854A009E21DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6A93FBE1D16854A009E21DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6A93FC01D16854A009E21DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A93FCC1D16B86B009E21DF /* RSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBaseViewController.h; sourceTree = "<group>"; };
 		E6A93FCD1D16B86B009E21DF /* RSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBaseViewController.m; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		E6D9F5861D2939E9009F319F /* RSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBrowserViewController.m; sourceTree = "<group>"; };
 		E6D9F5881D293B4B009F319F /* RSFeedItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFeedItemsViewController.h; sourceTree = "<group>"; };
 		E6D9F5891D293B4B009F319F /* RSFeedItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFeedItemsViewController.m; sourceTree = "<group>"; };
+		E6D9F58B1D352820009F319F /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 				E6A93FC71D16B7A1009E21DF /* View */,
 				E6A93FC61D16B781009E21DF /* Application */,
 				E6A93FBB1D16854A009E21DF /* Assets.xcassets */,
-				E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */,
+				E6D9F58B1D352820009F319F /* LaunchScreen.xib */,
 				E6A93FC01D16854A009E21DF /* Info.plist */,
 				E6A93FAF1D16854A009E21DF /* Supporting Files */,
 			);
@@ -377,7 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A93FBF1D16854A009E21DF /* LaunchScreen.storyboard in Resources */,
+				E6D9F58C1D352820009F319F /* LaunchScreen.xib in Resources */,
 				E6A93FBC1D16854A009E21DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,17 +462,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E6A93FBD1D16854A009E21DF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6A93FBE1D16854A009E21DF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E6A93FC11D16854A009E21DF /* Debug */ = {
@@ -562,11 +551,14 @@
 			baseConfigurationReference = 89EC14C7288306D897B214D4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RSFeedReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RSFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -575,11 +567,14 @@
 			baseConfigurationReference = 60F05D70F378FFF17C0A2B1E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RSFeedReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RSFeedReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -22,7 +22,7 @@
     self.navigationController = [[UINavigationController alloc] init];
     self.navigationController.viewControllers = @[feedListViewCOntroller];
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.7 blue:0.23 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:32.0/255.0 green:174.0/255.0 blue:245.0/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     
