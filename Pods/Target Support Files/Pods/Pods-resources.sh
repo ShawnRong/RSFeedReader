@@ -58,12 +58,6 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@2x.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@2x~ipad.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@3x.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@3x~ipad.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity~ipad.png"
   install_resource "KINWebBrowser/Assets/backbutton.png"
   install_resource "KINWebBrowser/Assets/backbutton@2x.png"
   install_resource "KINWebBrowser/Assets/backbutton@3x.png"
@@ -73,12 +67,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/TUSafariActivity.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@2x.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@2x~ipad.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@3x.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity@3x~ipad.png"
-  install_resource "ARChromeActivity/ARChromeActivity/ARChromeActivity~ipad.png"
   install_resource "KINWebBrowser/Assets/backbutton.png"
   install_resource "KINWebBrowser/Assets/backbutton@2x.png"
   install_resource "KINWebBrowser/Assets/backbutton@3x.png"

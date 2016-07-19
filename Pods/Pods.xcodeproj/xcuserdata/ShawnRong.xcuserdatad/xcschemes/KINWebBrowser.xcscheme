@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F9F2D1DBF4A4D049AA7037D3'
+               BlueprintIdentifier = 'F18115ACBFE0860C434284CB'
                BlueprintName = 'KINWebBrowser'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libKINWebBrowser.a'>

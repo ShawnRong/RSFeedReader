@@ -126,7 +126,7 @@
         [[[RSBrain sharedBrain] coreData] deleteObject:feed];
         
         for (FeedItem *item in incomingItems) {
-            if (![refreshDatesArr containsObject:item.publishDate]) {
+            if (![refreshDatesArr containsObject:[item publishDate]]) {
                 item.feed = self.feed;
             }else{
                 [[[RSBrain sharedBrain] coreData] deleteObject:item];
@@ -136,6 +136,7 @@
         [[[RSBrain sharedBrain] coreData] saveContext];
         
         [incomingItems removeAllObjects];
+        [refreshDatesArr removeAllObjects];
         [self.feedItemsView.refreshControl endRefreshing];
     }
     

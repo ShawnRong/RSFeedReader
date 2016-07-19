@@ -26,11 +26,11 @@
         
         self.bottomLabel = [[UILabel alloc]init];
         self.bottomLabel.backgroundColor = [UIColor whiteColor];
-        self.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+        self.bottomLabel.font = [UIFont fontWithName:@"Avenir" size:16.0];
         self.bottomLabel.textAlignment = NSTextAlignmentCenter;
         self.bottomLabel.numberOfLines = 0;
-        self.bottomLabel.text = @"NO any RSS Feed";
-        self.bottomLabel.textColor = [UIColor colorWithRed:0.99 green:0.7 blue:0.23 alpha:1];
+        self.bottomLabel.text = @"NO Any RSS Feed";
+        self.bottomLabel.textColor = [UIColor colorWithRed:32.0/255.0 green:174.0/255.0 blue:245.0/255.0 alpha:1];
         [self addSubview:self.bottomLabel];
         
         self.tableView = [[UITableView alloc]init];

@@ -326,8 +326,8 @@
 				139A993D9C7C592F22515AB0 /* Check Pods Manifest.lock */,
 				E6A93FA81D16854A009E21DF /* Sources */,
 				E6A93FA91D16854A009E21DF /* Frameworks */,
-				E6A93FAA1D16854A009E21DF /* Resources */,
 				A9DBDCC80AE1442869DAD30B /* Embed Pods Frameworks */,
+				E6A93FAA1D16854A009E21DF /* Resources */,
 				18740ED069A222DB5FEA40BC /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -350,7 +350,7 @@
 				TargetAttributes = {
 					E6A93FAB1D16854A009E21DF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = W3QL227KEZ;
+						DevelopmentTeam = CVXVBMBJ6Y;
 					};
 				};
 			};
@@ -556,7 +556,7 @@
 				INFOPLIST_FILE = RSFeedReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RSFeedReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shawnrong.lightrssreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -572,7 +572,7 @@
 				INFOPLIST_FILE = RSFeedReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.RSFeedReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shawnrong.lightrssreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
